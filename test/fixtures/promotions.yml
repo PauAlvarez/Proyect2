@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechapromo: 2014-06-17
+  mediodecomunica: MyString
+  descrippromo: MyText
+  acuerdo: MyText
+  user_id: 
+  client_id: 
+
+two:
+  fechapromo: 2014-06-17
+  mediodecomunica: MyString
+  descrippromo: MyText
+  acuerdo: MyText
+  user_id: 
+  client_id: 

@@ -1,0 +1,29 @@
+<h1>Listing fees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cantidaddinero</th>
+      <th>Fechaestablecida</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fees.each do |fee| %>
+      <tr>
+        <td><%= fee.cantidaddinero %></td>
+        <td><%= fee.fechaestablecida %></td>
+        <td><%= fee.user %></td>
+        <td><%= link_to 'Show', fee %></td>
+        <td><%= link_to 'Edit', edit_fee_path(fee) %></td>
+        <td><%= link_to 'Destroy', fee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fee', new_fee_path %>

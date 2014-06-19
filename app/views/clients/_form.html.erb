@@ -1,0 +1,49 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombreClient %><br>
+    <%= f.text_field :nombreClient %>
+  </div>
+  <div class="field">
+    <%= f.label :telefonoClient %><br>
+    <%= f.text_field :telefonoClient %>
+  </div>
+  <div class="field">
+    <%= f.label :direccionClient %><br>
+    <%= f.text_field :direccionClient %>
+  </div>
+  <div class="field">
+    <%= f.label :emailClient %><br>
+    <%= f.text_field :emailClient %>
+  </div>
+  <div class="field">
+    <%= f.label :rfcClient %><br>
+    <%= f.text_field :rfcClient %>
+  </div>
+  <div class="field">
+    <%= f.label :razonsocialClient %><br>
+    <%= f.text_field :razonsocialClient %>
+  </div>
+  <div class="field">
+    <%= f.label :facebookClient %><br>
+    <%= f.text_field :facebookClient %>
+  </div>
+  <div class="field">
+    <%= f.label :linkedinClient %><br>
+    <%= f.text_field :linkedinClient %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
