@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :NombreProvider %><br>
-    <%= f.text_field :NombreProvider %>
+    <%= f.label :"Nombre" %><br>
+    <%= f.text_field :NombreProvider, :placeholder => "Nombre del Proveedor"  %>
   </div>
   <div class="field">
-    <%= f.label :direccionProvider %><br>
-    <%= f.text_field :direccionProvider %>
+    <%= f.label :"Dirección" %><br>
+    <%= f.text_field :direccionProvider, :placeholder => "Dirección"  %>
   </div>
   <div class="field">
-    <%= f.label :fechadasoProvider %><br>
+    <%= f.label :"Fecha de Asociación " %><br>
     <%= f.date_select :fechadasoProvider %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :"Aceptar" %>
   </div>
 <% end %>

@@ -12,38 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombreClient %><br>
-    <%= f.text_field :nombreClient %>
+   <%= f.label :"Nombre" %><br>
+    <%= f.text_field :nombreClient, :placeholder => "Nombre del cliente" %>
   </div>
   <div class="field">
-    <%= f.label :telefonoClient %><br>
-    <%= f.text_field :telefonoClient %>
+    <%= f.label :"Teléfono" %><br>
+    <%= f.text_field :telefonoClient, :placeholder => "Número telefónico" %>
   </div>
   <div class="field">
-    <%= f.label :direccionClient %><br>
-    <%= f.text_field :direccionClient %>
+     <%= f.label :"Dirección" %><br>
+    <%= f.text_field :direccionClient, :placeholder => "Dirección del cliente" %>
   </div>
   <div class="field">
-    <%= f.label :emailClient %><br>
-    <%= f.text_field :emailClient %>
+     <%= f.label :"Email" %><br>
+    <%= f.text_field :emailClient, :placeholder => "Correo electrónico" %>
   </div>
   <div class="field">
-    <%= f.label :rfcClient %><br>
-    <%= f.text_field :rfcClient %>
+    <%= f.label :"RFC" %><br>
+    <%= f.text_field :rfcClient, :placeholder => "El RFC" %>
   </div>
   <div class="field">
-    <%= f.label :razonsocialClient %><br>
-    <%= f.text_field :razonsocialClient %>
+    <%= f.label :"Razón social" %><br>
+    <%= f.text_field :razonsocialClient, :placeholder => "La Razón social" %>
   </div>
   <div class="field">
-    <%= f.label :facebookClient %><br>
-    <%= f.text_field :facebookClient %>
+    <%= f.label :"Facebook" %><br>
+    <%= f.text_field :facebookClient, :placeholder => "Dirección del Facebook" %>
   </div>
   <div class="field">
-    <%= f.label :linkedinClient %><br>
-    <%= f.text_field :linkedinClient %>
+   <%= f.label :"Linked In" %><br>
+    <%= f.text_field :linkedinClient, :placeholder => "Dirección de Linked In" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :"Aceptar" %>
   </div>
 <% end %>

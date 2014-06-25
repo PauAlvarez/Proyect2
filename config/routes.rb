@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
 
+  resources :categories
+
   resources :books
 
   resources :order_details
