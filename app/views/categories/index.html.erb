@@ -1,10 +1,10 @@
-<h1>Listing categories</h1>
+<h1>Lista de las Categorías</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Nombrecategoria</th>
-      <th>Descripcioncategoria</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,11 +12,11 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.NombreCategoria %></td>
+        <td><%= category.nombreCategoria %></td>
         <td><%= category.descripcionCategoria %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', category %></td>
+        <td><%= link_to 'Editar', edit_category_path(category) %></td>
+        <td><%= link_to 'Eliminar', category, method: :delete, data: { confirm: '¿Desea eliminar esta Categoría' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+<%= link_to 'Nueva Categoría', new_category_path %>

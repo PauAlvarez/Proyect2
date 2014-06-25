@@ -12,42 +12,44 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :isbn %><br>
-    <%= f.text_field :isbn %>
+    <%= f.label :"ISBN" %><br>
+    <%= f.text_field :isbn, :placeholder => "ISBN"%>
   </div>
   <div class="field">
-    <%= f.label :claveinterna %><br>
-    <%= f.text_field :claveinterna %>
+    <%= f.label :"clave" %><br>
+    <%= f.text_field :claveinterna, :placeholder => "Clave Interna" %>
   </div>
   <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+    <%= f.label :"Título" %><br>
+    <%= f.text_field :titulo, :placeholder => "Título de Libro" %>
   </div>
   <div class="field">
-    <%= f.label :autor %><br>
-    <%= f.text_field :autor %>
+    <%= f.label :"Autor" %><br>
+    <%= f.text_field :autor, :placeholder => "Auntor del Libro" %>
   </div>
   <div class="field">
-    <%= f.label :editorial %><br>
-    <%= f.text_field :editorial %>
+    <%= f.label :"Editorial" %><br>
+    <%= f.text_field :editorial, :placeholder => "Editorial" %>
   </div>
   <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.number_field :stock %>
+    <%= f.label :"Stock" %><br>
+    <%= f.number_field :stock, :placeholder => "Stock" %>
   </div>
   <div class="field">
-    <%= f.label :precio %><br>
+    <%= f.label :"Precio" %><br>
     <%= f.text_field :precio %>
   </div>
+
   <div class="field">
-    <%= f.label :provider_id %><br>
-    <%= f.text_field :provider_id %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
+      <%= f.label :"Proveedor"  %><br>
+   <%= f.select(:provider_id, Provider.all.collect {|g| [g.NombreProvider, g.id] }, :prompt => 'selecciona un Proveedor') %>
+  </div >
+
+    <div class="field">
+      <%= f.label :"Categoría"  %><br>
+   <%= f.select(:category_id, Category.all.collect {|g| [g.nombreCategoria, g.id] }, :prompt => 'selecciona un categoria') %>
+  </div >
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :"Aceptar" %>
   </div>
 <% end %>

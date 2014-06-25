@@ -1,4 +1,4 @@
-<h1>Listing books</h1>
+<h1>Lista de Libros</h1>
 
 <table class="table">
   <thead>
@@ -28,9 +28,9 @@
         <td><%= book.precio %></td>
         <td><%= book.provider %></td>
         <td><%= book.category %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', book %></td>
+        <td><%= link_to 'Editar', edit_book_path(book) %></td>
+        <td><%= link_to 'Eliminar', book, method: :delete, data: { confirm: '¿Desea eliminar este Libro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'Nuevo Libro', new_book_path %>
