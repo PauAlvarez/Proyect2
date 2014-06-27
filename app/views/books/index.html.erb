@@ -26,8 +26,8 @@
         <td><%= book.editorial %></td>
         <td><%= book.stock %></td>
         <td><%= book.precio %></td>
-        <td><%= book.provider %></td>
-        <td><%= book.category %></td>
+        <td><%= book.provider.NombreProvider %></td>
+        <td><%= book.category.nombreCategoria %></td>
         <td><%= link_to 'Mostrar', book %></td>
         <td><%= link_to 'Editar', edit_book_path(book) %></td>
         <td><%= link_to 'Eliminar', book, method: :delete, data: { confirm: '¿Desea eliminar este Libro?' } %></td>

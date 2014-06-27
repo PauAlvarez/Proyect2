@@ -36,14 +36,16 @@
 </p>
 
 <p>
-  <strong>Provider:</strong>
-  <%= @book.provider %>
+  <strong>Proveedor:</strong>
+  <%= @book.provider.NombreProvider %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @book.category %>
+  <strong>Categoría:</strong>
+  <%= @book.category.nombreCategoria %>
 </p>
 
 <%= link_to 'Editar', edit_book_path(@book) %> |
 <%= link_to 'Regresar', books_path %>
+
+      

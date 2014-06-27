@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-body { padding-top: 60px; }
+body { text-align: center; padding-top: 60px; }
 footer { margin-top: 100px; }
-table, td, th { vertical-align: middle; border: none; }
+table, td, th { text-align: center; vertical-align: middle; border: none; }
+p{text-align: left;}
+div{text-align: left;}
 th { border-bottom: 1px solid #DDD; }

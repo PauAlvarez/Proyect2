@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :"Autor" %><br>
-    <%= f.text_field :autor, :placeholder => "Auntor del Libro" %>
+    <%= f.text_field :autor, :placeholder => "Autor del Libro" %>
   </div>
   <div class="field">
     <%= f.label :"Editorial" %><br>
@@ -42,7 +42,7 @@
 
   <div class="field">
       <%= f.label :"Proveedor"  %><br>
-   <%= f.select(:provider_id, Provider.all.collect {|g| [g.NombreProvider, g.id] }, :prompt => 'selecciona un Proveedor') %>
+   <%= f.select(:provider_id, Provider.all.collect {|g| [g.NombreProvider, g.id] }, :prompt => 'selecciona un proveedor') %>
   </div >
 
     <div class="field">
