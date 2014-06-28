@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140628031605) do
   add_index "books", ["provider_id"], name: "index_books_on_provider_id"
 
   create_table "categories", force: true do |t|
-    t.string   "NombreCategoria"
+    t.string   "nombreCategoria"
     t.text     "descripcionCategoria"
     t.datetime "created_at"
     t.datetime "updated_at"
