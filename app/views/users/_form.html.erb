@@ -1,41 +1,44 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombreUser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombreUser, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccionUser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccionUser, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefonoUser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefonoUser, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :emailUser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :emailUser, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contrasenaUser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contrasenaUser, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :roluser, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :roluser, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :nombreUser %><br>
-    <%= f.text_field :nombreUser %>
-  </div>
-  <div class="field">
-    <%= f.label :direccionUser %><br>
-    <%= f.text_field :direccionUser %>
-  </div>
-  <div class="field">
-    <%= f.label :telefonoUser %><br>
-    <%= f.text_field :telefonoUser %>
-  </div>
-  <div class="field">
-    <%= f.label :emailUser %><br>
-    <%= f.text_field :emailUser %>
-  </div>
-  <div class="field">
-    <%= f.label :contrasenaUser %><br>
-    <%= f.text_field :contrasenaUser %>
-  </div>
-  <div class="field">
-    <%= f.label :roluser %><br>
-    <%= f.check_box :roluser %>
-  </div>
-  <div class="actions">
-    <%= f.submit :"Aceptar" %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn' %>
   </div>
 <% end %>

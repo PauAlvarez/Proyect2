@@ -1,55 +1,62 @@
-<%= form_for(@book) do |f| %>
-  <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-      <ul>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @book, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :isbn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :isbn, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :claveinterna, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :claveinterna, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :titulo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :titulo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :autor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :autor, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :editorial, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :editorial, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stock, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :stock, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :precio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :precio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :provider_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :provider_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :category_id, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :"ISBN" %><br>
-    <%= f.text_field :isbn, :placeholder => "ISBN"%>
-  </div>
-  <div class="field">
-    <%= f.label :"clave" %><br>
-    <%= f.text_field :claveinterna, :placeholder => "Clave Interna" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Título" %><br>
-    <%= f.text_field :titulo, :placeholder => "Título de Libro" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Autor" %><br>
-    <%= f.text_field :autor, :placeholder => "Auntor del Libro" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Editorial" %><br>
-    <%= f.text_field :editorial, :placeholder => "Editorial" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Stock" %><br>
-    <%= f.number_field :stock, :placeholder => "Stock" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Precio" %><br>
-    <%= f.text_field :precio %>
-  </div>
-
-  <div class="field">
-      <%= f.label :"Proveedor"  %><br>
-   <%= f.select(:provider_id, Provider.all.collect {|g| [g.NombreProvider, g.id] }, :prompt => 'selecciona un Proveedor') %>
-  </div >
-
-    <div class="field">
-      <%= f.label :"Categoría"  %><br>
-   <%= f.select(:category_id, Category.all.collect {|g| [g.nombreCategoria, g.id] }, :prompt => 'selecciona un categoria') %>
-  </div >
-  <div class="actions">
-    <%= f.submit :"Aceptar" %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                books_path, :class => 'btn' %>
   </div>
 <% end %>

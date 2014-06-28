@@ -3,17 +3,6 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
-
-      #
-      #
-      #Agregando comentairos
-      #Agregando comentairos
-      #Agregando comentairos
-      #Agregando comentairos
-      #Agregando comentairos
-      #
-      #
-
   def index
     @books = Book.all
   end
@@ -27,8 +16,6 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
   end
-
-
 
   # GET /books/1/edit
   def edit
@@ -73,7 +60,6 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
