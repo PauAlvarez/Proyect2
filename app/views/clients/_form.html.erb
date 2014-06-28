@@ -1,49 +1,56 @@
-<%= form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
-
-      <ul>
-      <% @client.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombreClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombreClient, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefonoClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefonoClient, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccionClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccionClient, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :emailClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :emailClient, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rfcClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rfcClient, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :razonsocialClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :razonsocialClient, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :facebookClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :facebookClient, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :linkedinClient, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :linkedinClient, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-   <%= f.label :"Nombre" %><br>
-    <%= f.text_field :nombreClient, :placeholder => "Nombre del cliente" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Teléfono" %><br>
-    <%= f.text_field :telefonoClient, :placeholder => "Número telefónico" %>
-  </div>
-  <div class="field">
-     <%= f.label :"Dirección" %><br>
-    <%= f.text_field :direccionClient, :placeholder => "Dirección del cliente" %>
-  </div>
-  <div class="field">
-     <%= f.label :"Email" %><br>
-    <%= f.text_field :emailClient, :placeholder => "Correo electrónico" %>
-  </div>
-  <div class="field">
-    <%= f.label :"RFC" %><br>
-    <%= f.text_field :rfcClient, :placeholder => "El RFC" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Razón social" %><br>
-    <%= f.text_field :razonsocialClient, :placeholder => "La Razón social" %>
-  </div>
-  <div class="field">
-    <%= f.label :"Facebook" %><br>
-    <%= f.text_field :facebookClient, :placeholder => "Dirección del Facebook" %>
-  </div>
-  <div class="field">
-   <%= f.label :"Linked In" %><br>
-    <%= f.text_field :linkedinClient, :placeholder => "Dirección de Linked In" %>
-  </div>
-  <div class="actions">
-    <%= f.submit :"Aceptar" %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                clients_path, :class => 'btn' %>
   </div>
 <% end %>
