@@ -3,17 +3,6 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
-
-      #
-      #
-      #Agregando comentairos
-      #Agregando comentairos
-      #Agregando comentairos
-      #Agregando comentairos
-      #Agregando comentairos
-      #
-      #
-
   def index
     @books = Book.all
   end
