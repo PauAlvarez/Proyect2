@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
 
-  resources :categories
-
   resources :books
-
+             root 'books#index'
   resources :order_details
 
   resources :orders

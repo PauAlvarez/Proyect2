@@ -1,41 +1,44 @@
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
-      <ul>
-      <% @order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :fechapedido, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechapedido, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fechaprogamada, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechaprogamada, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fechaentregada, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechaentregada, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :estatus, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :estatus, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :client_id, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :fechapedido %><br>
-    <%= f.date_select :fechapedido %>
-  </div>
-  <div class="field">
-    <%= f.label :fechaprogamada %><br>
-    <%= f.date_select :fechaprogamada %>
-  </div>
-  <div class="field">
-    <%= f.label :fechaentregada %><br>
-    <%= f.date_select :fechaentregada %>
-  </div>
-  <div class="field">
-    <%= f.label :estatus %><br>
-    <%= f.number_field :estatus %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit :"Aceptar" %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                orders_path, :class => 'btn' %>
   </div>
 <% end %>
