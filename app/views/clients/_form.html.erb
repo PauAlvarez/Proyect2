@@ -1,14 +1,21 @@
 <%= form_for @client, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
+
+  <div class="control-group<%= @client.errors[:nombreClient].any? ? " error" : "" %>">
     <%= f.label :nombreClient, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :nombreClient, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @client.errors[:nombreClient].any? ? @client.errors[:nombreClient].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
+
+
+  <div class="control-group<%= @client.errors[:telefonoClient].any? ? " error" : "" %>">
     <%= f.label :telefonoClient, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :telefonoClient, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @client.errors[:telefonoClient].any? ? @client.errors[:telefonoClient].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
   <div class="control-group">
