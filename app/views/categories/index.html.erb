@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:NombreCategoria) %></th>
+      <th><%= model_class.human_attribute_name(:nombreCategoria) %></th>
       <th><%= model_class.human_attribute_name(:descripcionCategoria) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -16,17 +16,19 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.id, category_path(category) %></td>
-        <td><%= category.NombreCategoria %></td>
+        <td><%= category.nombreCategoria %></td>
         <td><%= category.descripcionCategoria %></td>
         <td><%=l category.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_category_path(category), :class => 'btn btn-mini' %>
+          <% if can? :destroy, category %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       category_path(category),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+          <% end %>
         </td>
       </tr>
     <% end %>

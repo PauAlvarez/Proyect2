@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource #verifica la autorizacion correcta
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
@@ -27,7 +28,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     respond_to do |format|
-      if @category.save
+      if @category.save(category_params)
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
         format.json { render :show, status: :created, location: @category }
       else
