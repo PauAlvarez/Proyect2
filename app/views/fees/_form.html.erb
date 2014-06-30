@@ -1,29 +1,26 @@
-<%= form_for(@fee) do |f| %>
-  <% if @fee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@fee.errors.count, "error") %> prohibited this fee from being saved:</h2>
-
-      <ul>
-      <% @fee.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @fee, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :cantidaddinero, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cantidaddinero, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fechaestablecida, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechaestablecida, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :cantidaddinero %><br>
-    <%= f.text_field :cantidaddinero %>
-  </div>
-  <div class="field">
-    <%= f.label :fechaestablecida %><br>
-    <%= f.date_select :fechaestablecida %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit :"Aceptar" %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                fees_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :categories
-
+  devise_for :users
+  #devise_for :users
   resources :categories
 
   resources :books
-
+             root 'books#index'
   resources :order_details
 
   resources :orders
@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   resources :fees
 
   resources :providers
-
-  resources :users
 
   resources :clients
 

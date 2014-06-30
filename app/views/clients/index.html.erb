@@ -1,23 +1,27 @@
-<h1>Lista de Clientes</h1>
-
-<table class="table">
+<%- model_class = Client -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Teléfono</th>
-      <th>Dirección</th>
-      <th>Email</th>
-      <th>RFC</th>
-      <th>Razón Social</th>
-      <th>Facebook</th>
-      <th>Linked In</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombreClient) %></th>
+      <th><%= model_class.human_attribute_name(:telefonoClient) %></th>
+      <th><%= model_class.human_attribute_name(:direccionClient) %></th>
+      <th><%= model_class.human_attribute_name(:emailClient) %></th>
+      <th><%= model_class.human_attribute_name(:rfcClient) %></th>
+      <th><%= model_class.human_attribute_name(:razonsocialClient) %></th>
+      <th><%= model_class.human_attribute_name(:facebookClient) %></th>
+      <th><%= model_class.human_attribute_name(:linkedinClient) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @clients.each do |client| %>
       <tr>
+        <td><%= link_to client.id, client_path(client) %></td>
         <td><%= client.nombreClient %></td>
         <td><%= client.telefonoClient %></td>
         <td><%= client.direccionClient %></td>
@@ -26,14 +30,21 @@
         <td><%= client.razonsocialClient %></td>
         <td><%= client.facebookClient %></td>
         <td><%= client.linkedinClient %></td>
-        <td><%= link_to 'Mostrar', client %></td>
-        <td><%= link_to 'Editar', edit_client_path(client) %></td>
-        <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: '¿Desea eliminar este Cliente?' } %></td>
+        <td><%=l client.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_client_path(client), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      client_path(client),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Nuevo Cliente', new_client_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_client_path,
+            :class => 'btn btn-primary' %>
