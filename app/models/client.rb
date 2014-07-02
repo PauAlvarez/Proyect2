@@ -8,7 +8,7 @@ class Client < ActiveRecord::Base
 #a continuacion agrege el codigo en cada el form del controlador 
 #modifique los div y agregar el span
 
-	validates :nombreClient,  :presence => { message: "No puede dejarse en blanco" }
-	validates :telefonoClient, length: { in:7..12, message:"Debe contener entre 7 y 12 caracteres"}
-	validates :telefonoClient, numericality: {only_integer: true, message:"Caracteres entre 0 y 9" }
+	#validates :nombreClient,  :presence => { message: "No puede dejarse en blanco" }
+	#validates :telefonoClient, length: { in:7..12, message:"Debe contener entre 7 y 12 caracteres"}
+	#validates :telefonoClient, numericality: {only_integer: true, message:"Caracteres entre 0 y 9" }
 end

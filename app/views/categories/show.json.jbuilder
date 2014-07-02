@@ -1,1 +1,1 @@
-json.extract! @category, :id, :NombreCategoria, :descripcionCategoria, :created_at, :updated_at
+json.extract! @category, :id, :nombreCategoria, :descripcionCategoria, :created_at, :updated_at
