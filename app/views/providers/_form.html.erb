@@ -1,26 +1,26 @@
 <%= form_for @provider, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :NombreProvider, :class => 'control-label' %>
+    <%= f.label :"Nombre o Razón social:", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :NombreProvider, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :direccionProvider, :class => 'control-label' %>
+    <%= f.label :"Dirección:", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :direccionProvider, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :fechadasoProvider, :class => 'control-label' %>
+    <%= f.label :"Fecha de asociación:", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fechadasoProvider, :class => 'text_field' %>
+      <%= f.date_select :fechadasoProvider, :class => 'text_field' %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit nil, :class => 'btn btn-default' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                providers_path, :class => 'btn' %>
+                providers_path, :class => 'btn'  %>
   </div>
 <% end %>

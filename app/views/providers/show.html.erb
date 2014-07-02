@@ -1,14 +1,14 @@
 <%- model_class = Provider -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+  <h1><%#=t '.title', :default => model_class.model_name.human.titleize %> <%= @provider.NombreProvider %>, agregado</h1>
+</div> 
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:NombreProvider) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Nombre") %>:</strong></dt>
   <dd><%= @provider.NombreProvider %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:direccionProvider) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Dirección") %>:</strong></dt>
   <dd><%= @provider.direccionProvider %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:fechadasoProvider) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Fecha de asociación") %>:</strong></dt>
   <dd><%= @provider.fechadasoProvider %></dd>
 </dl>
 
