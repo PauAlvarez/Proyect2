@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   load_and_authorize_resource #verifica la autorizacion correcta
+  #Autoriza solo usuaros registrados 
+  
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
