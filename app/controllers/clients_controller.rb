@@ -31,6 +31,9 @@ class ClientsController < ApplicationController
     #validancion de cliente
     
     respond_to do |format|
+
+      #agregar linea
+
     if @client.valid?  
             puts "cliente valido"
       if @client.save
@@ -40,6 +43,7 @@ class ClientsController < ApplicationController
         format.html { render :new }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
+      #en caso de que noi sea valido
     else
      format.html { render :new }
      format.json { render json: @client.errors, status: :unprocessable_entity }    

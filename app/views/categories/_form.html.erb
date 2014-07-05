@@ -1,14 +1,20 @@
 <%= form_for @category, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :NombreCategoria, :class => 'control-label' %>
+
+   <div class="control-group<%= @category.errors[:nombreCategoria].any? ? " error" : "" %>">
+    <%= f.label :"Nombre", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :NombreCategoria, :class => 'text_field' %>
+      <%= f.text_field :nombreCategoria, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @category.errors[:nombreCategoria].any? ? @category.errors[:nombreCategoria].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :descripcionCategoria, :class => 'control-label' %>
+
+  <div class="control-group<%= @category.errors[:descripcionCategoria].any? ? " error" : "" %>">
+    <%= f.label :"Descripción", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :descripcionCategoria, :class => 'text_field' %>
+      <%= f.text_area :descripcionCategoria, :class => 'text_area' %>
+      <span class="help-inline">
+      <%= @category.errors[:descripcionCategoria].any? ? @category.errors[:descripcionCategoria].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
 

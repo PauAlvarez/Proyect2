@@ -5,10 +5,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:NombreCategoria) %></th>
-      <th><%= model_class.human_attribute_name(:descripcionCategoria) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:"id") %></th>
+      <th><%= model_class.human_attribute_name(:"Nombre") %></th>
+      <th><%= model_class.human_attribute_name(:"Descripción") %></th>
+      <th><%= model_class.human_attribute_name(:"Creado el") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.id, category_path(category) %></td>
-        <td><%= category.NombreCategoria %></td>
+        <td><%= category.nombreCategoria %></td>
         <td><%= category.descripcionCategoria %></td>
         <td><%=l category.created_at %></td>
         <td>
