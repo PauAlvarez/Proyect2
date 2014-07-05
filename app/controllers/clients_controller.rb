@@ -1,7 +1,5 @@
 class ClientsController < ApplicationController
   load_and_authorize_resource
-  #solo usuarios registrados
-
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
 
