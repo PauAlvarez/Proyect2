@@ -6,7 +6,7 @@
     </div>
   </div%>
   <div class="control-group<%= @promotion.errors[:mediodecomunica].any? ? " error" : "" %>">
-    <%= f.label :medio_de_comunicacion, :class => 'control-label' %>
+    <%= f.label :medio_de_comunicación, :class => 'control-label' %>
     <div class="controls">
       <%#= f.text_field :mediodecomunica,  :class => 'text_field',autofocus: true %>
        <%= f.collection_select :mediodecomunica, Promotion::MEDIOS, :to_s, :humanize %>
@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="control-group<%= @promotion.errors[:descripcion].any? ? " error" : "" %>">
-    <%= f.label :descripcion, :class => 'control-label' %>
+    <%= f.label :descripción, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :descrippromo, :class => 'text_field' %>
       <span class="help-inline">
