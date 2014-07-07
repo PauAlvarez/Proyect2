@@ -1,18 +1,18 @@
 <%- model_class = Promotion -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Promociones</h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:fechapromo) %></th>
-      <th><%= model_class.human_attribute_name(:mediodecomunica) %></th>
-      <th><%= model_class.human_attribute_name(:descrippromo) %></th>
-      <th><%= model_class.human_attribute_name(:acuerdo) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:client_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:Id) %></th>
+      <th><%= model_class.human_attribute_name(:"Fecha de registro") %></th>
+      <th><%= model_class.human_attribute_name(:"Medio de comunicación") %></th>
+      <th><%= model_class.human_attribute_name(:Descripcion) %></th>
+      <th><%= model_class.human_attribute_name(:Acuerdo) %></th>
+      <th><%= model_class.human_attribute_name(:Usuario) %></th>
+      <th><%= model_class.human_attribute_name(:Cliente) %></th>
+      <th><%= model_class.human_attribute_name(:Created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,11 +20,11 @@
     <% @promotions.each do |promotion| %>
       <tr>
         <td><%= link_to promotion.id, promotion_path(promotion) %></td>
-        <td><%= promotion.fechapromo %></td>
+        <td><%= promotion.fechapromo.strftime("%d %b %y %H:%M:%S") %></td>
         <td><%= promotion.mediodecomunica %></td>
         <td><%= promotion.descrippromo %></td>
         <td><%= promotion.acuerdo %></td>
-        <td><%= promotion.user_id %></td>
+        <td><%= promotion.user.email %></td>
         <td><%= promotion.client_id %></td>
         <td><%=l promotion.created_at %></td>
         <td>

@@ -1,20 +1,20 @@
 <%- model_class = Promotion -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1>Promociones<%#=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:fechapromo) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Fecha de registro") %>:</strong></dt>
   <dd><%= @promotion.fechapromo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mediodecomunica) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Medio de comunicación") %>:</strong></dt>
   <dd><%= @promotion.mediodecomunica %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:descrippromo) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:"Descripción") %>:</strong></dt>
   <dd><%= @promotion.descrippromo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:acuerdo) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:Acuerdo) %>:</strong></dt>
   <dd><%= @promotion.acuerdo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:Usuario) %>:</strong></dt>
   <dd><%= @promotion.user_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:client_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:Cliente) %>:</strong></dt>
   <dd><%= @promotion.client_id %></dd>
 </dl>
 
