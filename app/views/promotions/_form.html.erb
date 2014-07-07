@@ -1,36 +1,46 @@
 <%= form_for @promotion, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :fechapromo, :class => 'control-label' %>
+  <%#<div class="control-group">
+    <%= f.label :fecha, :class => 'control-label' >
     <div class="controls">
-      <%= f.text_field :fechapromo, :class => 'text_field' %>
+      <%= f.date_select :fechapromo, :class => 'text_field' >
+    </div>
+  </div%>
+  <div class="control-group<%= @promotion.errors[:mediodecomunica].any? ? " error" : "" %>">
+    <%= f.label :medio_de_comunicación, :class => 'control-label' %>
+    <div class="controls">
+      <%#= f.text_field :mediodecomunica,  :class => 'text_field',autofocus: true %>
+       <%= f.collection_select :mediodecomunica, Promotion::MEDIOS, :to_s, :humanize %>
+      <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+     <span class="help-inline">
+      <%= @promotion.errors[:mediodecomunica].any? ? @promotion.errors[:mediodecomunica].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :mediodecomunica, :class => 'control-label' %>
+  <div class="control-group<%= @promotion.errors[:descripcion].any? ? " error" : "" %>">
+    <%= f.label :descripción, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :mediodecomunica, :class => 'text_field' %>
+      <%= f.text_area :descrippromo, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @promotion.errors[:descrippromo].any? ? @promotion.errors[:descrippromo].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :descrippromo, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :descrippromo, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
+  <div class="control-group<%= @promotion.errors[:acuerdo].any? ? " error" : "" %>">
     <%= f.label :acuerdo, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :acuerdo, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @promotion.errors[:acuerdo].any? ? @promotion.errors[:acuerdo].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
+  <%#
   <div class="control-group">
-    <%= f.label :user_id, :class => 'control-label' %>
+    <%= f.label :usuario, :class => 'control-label' 
     <div class="controls">
-      <%= f.text_field :user_id, :class => 'text_field' %>
+      <%= f.text_field :user_id, :class => 'text_field' >
     </div>
   </div>
+  %>
   <div class="control-group">
-    <%= f.label :client_id, :class => 'control-label' %>
+    <%= f.label :cliente, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :client_id, :class => 'text_field' %>
     </div>

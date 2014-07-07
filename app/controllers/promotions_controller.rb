@@ -15,6 +15,7 @@ class PromotionsController < ApplicationController
   # GET /promotions/new
   def new
     @promotion = Promotion.new
+    
   end
 
   # GET /promotions/1/edit
@@ -26,14 +27,26 @@ class PromotionsController < ApplicationController
   def create
     @promotion = Promotion.new(promotion_params)
 
+    if user_signed_in? 
+      @promotion.user = User.find(current_user.id)
+    end 
+    @promotion.fechapromo = Time.new #ponemos la fecha del sistema
+    puts "usuario"+ @promotion.user_id.to_s
+    #puts "Datos del usuario" + @promotion.user.nombre
+
     respond_to do |format|
-      if @promotion.save
-        format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
-        format.json { render :show, status: :created, location: @promotion }
+      if @promotion.valid? 
+        if @promotion.save
+          format.html { redirect_to @promotion, notice: 'Promotion was successfully created.' }
+          format.json { render :show, status: :created, location: @promotion }
+        else
+          format.html { render :new }
+          format.json { render json: @promotion.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :new }
-        format.json { render json: @promotion.errors, status: :unprocessable_entity }
-      end
+       format.html { render :new }
+       format.json { render json: @promotion.errors, status: :unprocessable_entity }
+     end
     end
   end
 
