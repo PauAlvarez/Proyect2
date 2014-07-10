@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  load_and_authorize_resource #verifica la autorizacion correcta
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   # GET /categories
@@ -28,8 +27,8 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     respond_to do |format|
-      if @category.save(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+      if @category.save
+        format.html { redirect_to @category, notice: 'Los datos se guardaron correctamente.' }
         format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new }
@@ -43,7 +42,7 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to @category, notice: 'Los datos se actualizaron correctamente.' }
         format.json { render :show, status: :ok, location: @category }
       else
         format.html { render :edit }
@@ -57,7 +56,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
+      format.html { redirect_to categories_url, notice: 'Los datos se eliminaron correctamente.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +69,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:NombreCategoria, :descripcionCategoria)
+      params.require(:category).permit(:nombreCategoria, :descripcionCategoria)
     end
 end

@@ -3,16 +3,16 @@
 
 en:
   helpers:
-    actions: "Actions"
+    actions: "Acciones"
     links:
-      back: "Back"
-      cancel: "Cancel"
-      confirm: "Are you sure?"
-      destroy: "Delete"
-      new: "New"
-      edit: "Edit"
+      back: "Regresar"
+      cancel: "Cancelar"
+      confirm: "¿Seguro que quieres eliminar los datos?"
+      destroy: "Eliminar"
+      new: "Nuevo"
+      edit: "Editar"
     titles:
-      edit: "Edit %{model}"
+      edit: "Editar %{model}"
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"

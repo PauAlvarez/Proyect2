@@ -6,16 +6,16 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:isbn) %></th>
-      <th><%= model_class.human_attribute_name(:claveinterna) %></th>
-      <th><%= model_class.human_attribute_name(:titulo) %></th>
-      <th><%= model_class.human_attribute_name(:autor) %></th>
-      <th><%= model_class.human_attribute_name(:editorial) %></th>
-      <th><%= model_class.human_attribute_name(:stock) %></th>
-      <th><%= model_class.human_attribute_name(:precio) %></th>
-      <th><%= model_class.human_attribute_name(:provider_id) %></th>
-      <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:"ISBN") %></th>
+      <th><%= model_class.human_attribute_name(:"Clave") %></th>
+      <th><%= model_class.human_attribute_name(:"Título") %></th>
+      <th><%= model_class.human_attribute_name(:"Autor") %></th>
+      <th><%= model_class.human_attribute_name(:"Editorial") %></th>
+      <th><%= model_class.human_attribute_name(:"Stock") %></th>
+      <th><%= model_class.human_attribute_name(:"Precio") %></th>
+      <th><%= model_class.human_attribute_name(:"Proveedor") %></th>
+      <th><%= model_class.human_attribute_name(:"Categoría") %></th>
+      <th><%= model_class.human_attribute_name(:"Creado el") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -30,8 +30,8 @@
         <td><%= book.editorial %></td>
         <td><%= book.stock %></td>
         <td><%= book.precio %></td>
-        <td><%= book.provider_id %></td>
-        <td><%= book.category_id %></td>
+        <td><%= book.provider.NombreProvider %></td>
+        <td><%= book.category.nombreCategoria %></td>
         <td><%=l book.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

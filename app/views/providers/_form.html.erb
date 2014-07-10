@@ -1,20 +1,27 @@
 <%= form_for @provider, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :NombreProvider, :class => 'control-label' %>
+
+  <div class="control-group<%= @provider.errors[:NombreProvider].any? ? " error" : "" %>">
+    <%= f.label :"Nombre", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :NombreProvider, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @provider.errors[:NombreProvider].any? ? @provider.errors[:NombreProvider].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :direccionProvider, :class => 'control-label' %>
+
+  <div class="control-group<%= @provider.errors[:direccionProvider].any? ? " error" : "" %>">
+    <%= f.label :"Dirección", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :direccionProvider, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @provider.errors[:direccionProvider].any? ? @provider.errors[:direccionProvider].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
+
   <div class="control-group">
-    <%= f.label :fechadasoProvider, :class => 'control-label' %>
+    <%= f.label :"Fecha de Asociación", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fechadasoProvider, :class => 'text_field' %>
+      <%= f.date_select :fechadasoProvider, :class => 'date_select' %>
     </div>
   </div>
 

@@ -1,56 +1,83 @@
 <%= form_for @book, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :isbn, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:isbn].any? ? " error" : "" %>">
+    <%= f.label :"ISBN", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :isbn, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:isbn].any? ? @book.errors[:isbn].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :claveinterna, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:claveinterna].any? ? " error" : "" %>">
+    <%= f.label :"Clave", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :claveinterna, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:claveinterna].any? ? @book.errors[:claveinterna].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :titulo, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:titulo].any? ? " error" : "" %>">
+    <%= f.label :"Título", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :titulo, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:titulo].any? ? @book.errors[:titulo].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :autor, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:autor].any? ? " error" : "" %>">
+    <%= f.label :"Autor", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :autor, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:autor].any? ? @book.errors[:autor].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :editorial, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:editorial].any? ? " error" : "" %>">
+    <%= f.label :"Editorial", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :editorial, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:editorial].any? ? @book.errors[:editorial].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :stock, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:stock].any? ? " error" : "" %>">
+    <%= f.label :"Stock", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :stock, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:stock].any? ? @book.errors[:stock].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :precio, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:precio].any? ? " error" : "" %>">
+    <%= f.label :"Precio", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :precio, :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:precio].any? ? @book.errors[:precio].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :provider_id, :class => 'control-label' %>
+  
+  <div class="control-group<%= @book.errors[:provider_id].any? ? " error" : "" %>">
+    <%= f.label :"Proveedor", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :provider_id, :class => 'text_field' %>
+     <%= f.select :provider_id, Provider.all.collect {|g| [g.NombreProvider, g.id] }, :prompt => 'selecciona un proveedor', :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:provider_id].any? ? @book.errors[:provider_id].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :category_id, :class => 'control-label' %>
+
+  <div class="control-group<%= @book.errors[:category_id].any? ? " error" : "" %>">
+    <%= f.label :"Categoría", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :category_id, :class => 'text_field' %>
+      <%= f.select :category_id, Category.all.collect {|g| [g.nombreCategoria, g.id] }, :prompt => 'selecciona una categoria', :class => 'text_field' %>
+      <span class="help-inline">
+      <%= @book.errors[:category_id].any? ? @book.errors[:category_id].to_s[/\w([^"]*)/] : "" %></span>
     </div>
   </div>
 
