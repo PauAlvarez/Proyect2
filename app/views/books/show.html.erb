@@ -4,24 +4,24 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:"ISBN") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:isbn) %>:</strong></dt>
   <dd><%= @book.isbn %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Clave") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:claveinterna) %>:</strong></dt>
   <dd><%= @book.claveinterna %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Título") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:titulo) %>:</strong></dt>
   <dd><%= @book.titulo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Autor") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:autor) %>:</strong></dt>
   <dd><%= @book.autor %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Editorial") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:editorial) %>:</strong></dt>
   <dd><%= @book.editorial %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"stock") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:stock) %>:</strong></dt>
   <dd><%= @book.stock %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Precio") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:precio) %>:</strong></dt>
   <dd><%= @book.precio %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Proveedor") %>:</strong></dt>
-  <dd><%= @book.provider.NombreProvider %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Categoría") %>:</strong></dt>
-  <dd><%= @book.category.nombreCategoria %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:provider_id) %>:</strong></dt>
+  <dd><%= @book.provider_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
+  <dd><%= @book.category_id %></dd>
 </dl>
 
 <div class="form-actions">
