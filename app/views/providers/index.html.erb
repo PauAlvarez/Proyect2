@@ -1,26 +1,26 @@
 <%- model_class = Provider -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1> Proveedores <%#=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:NombreProvider) %></th>
-      <th><%= model_class.human_attribute_name(:direccionProvider) %></th>
-      <th><%= model_class.human_attribute_name(:fechadasoProvider) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:"Nombre") %></th>
+      <th><%= model_class.human_attribute_name(:"Dirección") %></th>
+      <th><%= model_class.human_attribute_name(:"Fecha de asociación") %></th>
+      <!--<th><%#= model_class.human_attribute_name(:created_at) %></th>-->
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @providers.each do |provider| %>
       <tr>
-        <td><%= link_to provider.id, provider_path(provider) %></td>
+      <!--<td><%#= link_to provider.id, provider_path(provider) %></td>-->
         <td><%= provider.NombreProvider %></td>
         <td><%= provider.direccionProvider %></td>
         <td><%= provider.fechadasoProvider %></td>
-        <td><%=l provider.created_at %></td>
+        <!--<td><%=l provider.created_at %></td>-->
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_provider_path(provider), :class => 'btn btn-mini' %>

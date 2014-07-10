@@ -1,23 +1,26 @@
 <%= form_for @provider, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :NombreProvider, :class => 'control-label' %>
+    <%= f.label :"Nombre o razón social", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :NombreProvider, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :direccionProvider, :class => 'control-label' %>
+    <%= f.label :"Dirección", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :direccionProvider, :class => 'text_field' %>
+      <%= f.text_area :direccionProvider, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :fechadasoProvider, :class => 'control-label' %>
+    <%= f.label :"Fecha de asociación", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fechadasoProvider, :class => 'text_field' %>
+      <%#= f.text_field :fechadasoProvider, 'data-behaviour' => 'datepicker' %>
+      <%= f.text_field :fechadasoProvider, 'data-behaviour' => 'datepicker' %>
     </div>
   </div>
-
+  <script type="text/javascript">
+  $('[data-behaviour~=datepicker]').datepicker();
+</script>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
