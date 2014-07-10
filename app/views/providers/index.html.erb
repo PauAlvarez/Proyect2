@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:"Nombre") %></th>
-      <th><%= model_class.human_attribute_name(:"Dirección") %></th>
-      <th><%= model_class.human_attribute_name(:"Fecha de Asociación ") %></th>
-      <th><%= model_class.human_attribute_name(:"Creado el") %></th>
+      <th><%= model_class.human_attribute_name(:NombreProvider) %></th>
+      <th><%= model_class.human_attribute_name(:direccionProvider) %></th>
+      <th><%= model_class.human_attribute_name(:fechadasoProvider) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>

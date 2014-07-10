@@ -4,9 +4,9 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:"Nombre") %>:</strong></dt>
-  <dd><%= @category.nombreCategoria%></dd>
-  <dt><strong><%= model_class.human_attribute_name(:"Descripción") %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:nombreCategoria) %>:</strong></dt>
+  <dd><%= @category.nombreCategoria %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcionCategoria) %>:</strong></dt>
   <dd><%= @category.descripcionCategoria %></dd>
 </dl>
 
