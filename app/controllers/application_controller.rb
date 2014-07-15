@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
 
 
  	#en caso de que no acepte los datos del modelo
+  before_action do  
+  resource = controller_name.singularize.to_sym
+  method = "#{resource}_params"
+  params[resource] &&= send(method) if respond_to?(method, true)
+end  
  	
 
   def configure_permitted_parameters
